@@ -17,10 +17,11 @@ Day 2
 - Learned functions (normal and arrow)
 - Learned arrays and methods (push, pop, map, filter, etc)
 - Learned objects
-- Learned ES6 features (destructuring, template literals, spread)
+- Learned ES6 features (destructuring, template literals, spread, rest)
  
 ---
  
 Goal
  
 To improve my JavaScript and TypeScript skills step by step.
+
