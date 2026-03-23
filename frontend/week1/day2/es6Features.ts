@@ -12,7 +12,7 @@ const q: number = 5;
 
 //* arrow function
 const count = (s: number, t: number) => s + t;
-console.log(add(2, 3));
+console.log(count(2, 3));
 
 //* Template literals
 let herName: string = "Sahiba";
