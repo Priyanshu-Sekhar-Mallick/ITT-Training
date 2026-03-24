@@ -21,14 +21,14 @@
 //     input.innerText=input.value;
 // })
 
-const myTitle = document.getElementById('title') as HTMLElement;
-const input1 = document.getElementById('inputBox') as HTMLInputElement;
-const button = document.getElementById('btn') as HTMLButtonElement;
+const titleElement  = document.getElementById('title') as HTMLElement;
+const inputElement  = document.getElementById('inputBox') as HTMLInputElement;
+const submitButton  = document.getElementById('btn') as HTMLButtonElement;
 
-button.addEventListener("click",()=>{
-    myTitle.innerText=input1.value;
-    button.innerText="clicked";
-    button.style.backgroundColor="blue";
+submitButton .addEventListener("click",()=>{
+    titleElement.innerText=inputElement.value;
+    submitButton.innerText="clicked";
+    submitButton .style.backgroundColor="blue";
     
 })
 

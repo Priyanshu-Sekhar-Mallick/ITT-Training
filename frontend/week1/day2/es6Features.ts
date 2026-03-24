@@ -1,5 +1,5 @@
 //* ES6 (ECMAScript 2015) — this is where modern JavaScript really starts.
-var x: number = 10; //old way
+var y: number = 10; //old way
 
 let a: number = 10; // new version
 const b = 30; // new version
@@ -19,19 +19,19 @@ let herName: string = "Sahiba";
 console.log(`Hello ${herName}`);
 
 //* Array destructing
-let arr12 = [1, 2, 3];
-let [j, k, l] = arr12;
-console.log(j, k, l);
+let numberArray  = [1, 2, 3];
+let [first, second, third] = numberArray ;
+console.log(first, second, third);
 
 //* Object destructing
-let user13 = { uname: "John", uage: 25 };
-let { uname, uage } = user13;
+let userDetails  = { uname: "John", uage: 25 };
+let { uname, uage } = userDetails ;
 console.log(uname, uage);
 
 //* Merge Array
-let aa = [1,2];
-let bb = [3,4];
-let combined = [...aa, ...bb];
+let firstArray  = [1,2];
+let secondArray  = [3,4];
+let combined = [...firstArray, ...secondArray ];
 
 
 

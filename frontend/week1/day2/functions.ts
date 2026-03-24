@@ -1,33 +1,33 @@
-function add(a: number, b: number): number{
-    return a+b;
+function addNumbers(firstNumber: number, secondNumber: number): number{
+    return firstNumber+secondNumber;
 }
-console.log(add(10,40));
+console.log(addNumbers(10,40));
 
-function isEven(num: number): string{
+function getEvenOrOdd(num: number): string{
     return num % 2 === 0? "Even":"Odd";
-} console.log(isEven(10))
+} console.log(getEvenOrOdd(10))
 
-function checkEven(num: number): boolean{
+function isNumberEven(num: number): boolean{
     if(num % 2 === 0){
         return true;
     }else{
         return false;
     }
-}console.log(checkEven(29));
+}console.log(isNumberEven(29));
 
 //* Arrow function
-let username = (username: string): string=>{
+let greetUser  = (username: string): string=>{
     return `Hello, ${username}`;
 };
-console.log(username("Priyanshu"));
+console.log(greetUser ("Priyanshu"));
 
 let hello = () => {
     console.log("Hello world");
 };
 hello();
 
-const sum = (a: number, b: number): number => a + b;
-console.log(sum(5, 3));
+const calculateSum  = (firstNumber: number, secondNumber: number): number => firstNumber + secondNumber;
+console.log(calculateSum (5, 3));
 
 
 

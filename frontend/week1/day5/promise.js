@@ -35,9 +35,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 //* Promise - It represents the future result, either sucess or failed.
-var promise = new Promise(function (resolve, reject) {
-    var success = false;
-    if (success) {
+var dataFetchPromise = new Promise(function (resolve, reject) {
+    var isSuccessful = false;
+    if (isSuccessful) {
         resolve("Data received!");
     }
     else {
@@ -45,12 +45,12 @@ var promise = new Promise(function (resolve, reject) {
     }
 });
 //* then() - for success
-promise.then(function (result) {
-    console.log(result);
+dataFetchPromise.then(function (responseMessage) {
+    console.log(responseMessage);
 });
 //* catch() - for error
-promise.catch(function (error) {
-    console.log("Error");
+dataFetchPromise.catch(function (errorMessage) {
+    console.log(errorMessage);
 });
 //* async and await - used for cleaner way to handle the promise (modern way)
 function getData() {
@@ -60,44 +60,44 @@ function getData() {
         }, 2000);
     });
 }
-function fetchData() {
+function handleDataFetch() {
     return __awaiter(this, void 0, void 0, function () {
-        var resu;
+        var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, getData()];
                 case 1:
-                    resu = _a.sent();
-                    console.log(resu);
+                    response = _a.sent();
+                    console.log(response);
                     return [2 /*return*/];
             }
         });
     });
 }
-fetchData();
+handleDataFetch();
 //? Examples
-function step1() {
+function stepOne() {
     return Promise.resolve("Step 1 done");
 }
-function step2() {
+function stepTwo() {
     return Promise.resolve("Step 2 done");
 }
-function process() {
+function executeSteps() {
     return __awaiter(this, void 0, void 0, function () {
-        var res1, res2;
+        var stepOneResult, stepTwoResult;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, step1()];
+                case 0: return [4 /*yield*/, stepOne()];
                 case 1:
-                    res1 = _a.sent();
-                    console.log(res1);
-                    return [4 /*yield*/, step2()];
+                    stepOneResult = _a.sent();
+                    console.log(stepOneResult);
+                    return [4 /*yield*/, stepTwo()];
                 case 2:
-                    res2 = _a.sent();
-                    console.log(res2);
+                    stepTwoResult = _a.sent();
+                    console.log(stepTwoResult);
                     return [2 /*return*/];
             }
         });
     });
 }
-process();
+executeSteps();

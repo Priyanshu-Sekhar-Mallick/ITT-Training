@@ -18,18 +18,18 @@ console.log(sum);
 
 //* find() - find first matching value.
 let users:number[] = [10,12,15,20];
-let res:number | undefined = users.find(num => num >10);
-console.log(res);
+let numAboveTen:number | undefined = users.find(num => num >10);
+console.log(numAboveTen);
 
 //* some() - used for check at least one value is true
 let numbers:number[] = [2,3,4];
-let res1:boolean = numbers.some(num => num > 2);
-console.log(res1); 
+let numAboveTwo:boolean = numbers.some(num => num > 2);
+console.log(numAboveTwo); 
 
 //* every() - checks if all values are true.
-let numbers2:number[] = [2,3,5,7,8,1];
-let res2:boolean = numbers2.every(num => num > 1);
-console.log(res2);
+let sequences:number[] = [2,3,5,7,8,1];
+let checkAll:boolean = sequences.every(num => num > 1);
+console.log(checkAll);
 
 
 //* callback function - A function is passed as an argument to another function.
@@ -44,11 +44,11 @@ function sayHello():void{
 greeting("Priyanshu",sayHello);
 
 //* Arrow function
-const print1 = (a:number,b:number)=>a+b;
-console.log(print1(1,2));
+const printNumber = (firstNumber:number,secondNumber:number)=>firstNumber+secondNumber;
+console.log(printNumber(1,2));
 
-const print2 = (nam:string)=>"Hello "+nam;
-console.log(print2("Priyanshu"));
+const printString = (userName:string)=>"Hello "+userName;
+console.log(printString("Priyanshu"));
 
 
 

@@ -12,18 +12,18 @@
 // }
 
 //* else...if
-let mark: number = 78;
-if(mark > 80){
+let studentMark: number = 78;
+if(studentMark > 80){
     console.log("Grade A");
-}else if(mark > 60){
+}else if(studentMark > 60){
     console.log("Grade B");
 }else{
     console.log("Grade C");
 }
 
 //* Switch - used when you want to check with many possible values
-let day: number = 29;
-switch(day){
+let dayNumber: number = 29;
+switch(dayNumber){
     case 1:
         console.log("Sunday");
         break;
@@ -50,6 +50,6 @@ switch(day){
 }
 
 //* Ternary Operator - used for short version of if else.
-let age: number = 19;
-let result: string = age >= 18 ? "Adult" : "Minor";
+let userAge: number = 19;
+let result: string = userAge >= 18 ? "Adult" : "Minor";
 console.log(result);

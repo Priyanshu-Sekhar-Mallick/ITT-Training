@@ -17,9 +17,9 @@ setInterval(function () {
     // console.log("Run again and again");
 }, 2000);
 //? How to stop setInterval
-var id = setInterval(function () {
+var intervalId = setInterval(function () {
     console.log("Running...");
 }, 1000);
 setTimeout(function () {
-    clearTimeout(id); // by the help of this we can stop the interval.
+    clearTimeout(intervalId); // by the help of this we can stop the interval.
 }, 5000);

@@ -1,8 +1,8 @@
 //* Promise - It represents the future result, either sucess or failed.
-let promise: Promise<string> = new Promise((resolve, reject) => {
-    let success: boolean = false;
+let dataFetchPromise: Promise<string> = new Promise((resolve, reject) => {
+    let isSuccessful: boolean = false;
 
-    if(success){
+    if(isSuccessful){
         resolve("Data received!");
     }else{
         reject("Error occured");
@@ -10,12 +10,12 @@ let promise: Promise<string> = new Promise((resolve, reject) => {
 });
 
 //* then() - for success
-promise.then((result: string) => {
-    console.log(result);
+dataFetchPromise.then((responseMessage: string) => {
+    console.log(responseMessage);
 });
 //* catch() - for error
-promise.catch((error: string) => {
-    console.log("Error");
+dataFetchPromise.catch((errorMessage: string) => {
+    console.log(errorMessage);
 });
 
 //* async and await - used for cleaner way to handle the promise (modern way)
@@ -28,28 +28,28 @@ function getData(){
     });
 }
 
-async function fetchData() {
-    let resu = await getData();
-    console.log(resu);
+async function handleDataFetch() {
+    let response  = await getData();
+    console.log(response );
 }
-fetchData();
+handleDataFetch();
 
 
 //? Examples
-function step1() {
+function stepOne() {
   return Promise.resolve("Step 1 done");
 }
 
-function step2() {
+function stepTwo() {
   return Promise.resolve("Step 2 done");
 }
 
-async function process() {
-  let res1 = await step1();
-  console.log(res1);
+async function executeSteps() {
+  let stepOneResult  = await stepOne();
+  console.log(stepOneResult );
 
-  let res2 = await step2();
-  console.log(res2);
+  let stepTwoResult  = await stepTwo();
+  console.log(stepTwoResult );
 }
 
-process();
+executeSteps();

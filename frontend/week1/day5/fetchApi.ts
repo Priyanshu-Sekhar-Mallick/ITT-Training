@@ -6,16 +6,16 @@ type User ={
     id:number,
     email:String
 };
-async function getUser(): Promise<void> {
-    let response: any = await fetch("https://jsonplaceholder.typicode.com/users"); // this is a api and will return some fake data
-    let data: User[] = await response.json();
+async function fetchUsers(): Promise<void> {
+    let apiResponse: any = await fetch("https://jsonplaceholder.typicode.com/users"); // this is a api and will return some fake data
+    let userList: User[] = await apiResponse.json();
     // console.log(data); instead of return all data print only users name
 
-    data.forEach(user=> {
+    userList.forEach(user=> {
         console.log(user.name);
     });
 }
-getUser();
+fetchUsers();
 
 
 //* Examples 2
@@ -26,13 +26,13 @@ type Post = {
     body:string
 };  
 
-async function getPost(): Promise<void> {
-    let response: any = await fetch("https://jsonplaceholder.typicode.com/posts");
-    let data: Post[] = await response.json();
+async function fetchPosts(): Promise<void> {
+    let apiResponse: any = await fetch("https://jsonplaceholder.typicode.com/posts");
+    let postList: Post[] = await apiResponse.json();
 
-    data.forEach((post: Post) => {
+    postList.forEach((post: Post) => {
         console.log(post.title);
     });
 }
-getPost();
+fetchPosts();
 

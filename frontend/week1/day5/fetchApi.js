@@ -35,19 +35,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-function getUser() {
+function fetchUsers() {
     return __awaiter(this, void 0, void 0, function () {
-        var response, data;
+        var apiResponse, userList;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, fetch("https://jsonplaceholder.typicode.com/users")];
                 case 1:
-                    response = _a.sent();
-                    return [4 /*yield*/, response.json()];
+                    apiResponse = _a.sent();
+                    return [4 /*yield*/, apiResponse.json()];
                 case 2:
-                    data = _a.sent();
+                    userList = _a.sent();
                     // console.log(data); instead of return all data print only users name
-                    data.forEach(function (user) {
+                    userList.forEach(function (user) {
                         console.log(user.name);
                     });
                     return [2 /*return*/];
@@ -55,19 +55,19 @@ function getUser() {
         });
     });
 }
-getUser();
-function getPost() {
+fetchUsers();
+function fetchPosts() {
     return __awaiter(this, void 0, void 0, function () {
-        var response, data;
+        var apiResponse, postList;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, fetch("https://jsonplaceholder.typicode.com/posts")];
                 case 1:
-                    response = _a.sent();
-                    return [4 /*yield*/, response.json()];
+                    apiResponse = _a.sent();
+                    return [4 /*yield*/, apiResponse.json()];
                 case 2:
-                    data = _a.sent();
-                    data.forEach(function (post) {
+                    postList = _a.sent();
+                    postList.forEach(function (post) {
                         console.log(post.title);
                     });
                     return [2 /*return*/];
@@ -75,4 +75,4 @@ function getPost() {
         });
     });
 }
-getPost();
+fetchPosts();

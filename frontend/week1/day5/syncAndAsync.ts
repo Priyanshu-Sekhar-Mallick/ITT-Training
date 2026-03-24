@@ -23,12 +23,12 @@ setInterval(() => {
 },2000);
 
 //? How to stop setInterval
-let id = setInterval(() => {
+let intervalId  = setInterval(() => {
     console.log("Running...")
 }, 1000);
 
 setTimeout(() => {
-    clearTimeout(id); // by the help of this we can stop the interval.
+    clearTimeout(intervalId ); // by the help of this we can stop the interval.
 }, 5000);
 
 

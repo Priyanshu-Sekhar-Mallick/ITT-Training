@@ -35,10 +35,10 @@ title.style.backgroundColor = 'green';
 const className = document.getElementsByClassName('heading bg-black') as HTMLCollection;
 console.log(className);
 
-const myUl = document.querySelector('ul') as HTMLElement;
-console.log(myUl);
+const myUnorderList = document.querySelector('ul') as HTMLElement;
+console.log(myUnorderList);
 
-// const green = myUl?.querySelector('li') as HTMLElement;
+// const green = myUnorderList?.querySelector('li') as HTMLElement;
 // green.innerText = 'five';
 // green.style.color = 'green';
 

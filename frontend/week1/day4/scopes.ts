@@ -1,6 +1,6 @@
 //* scopes - this means the area where the variable are used.
 //* Global Scope - Accessable everywhere
-// let UserName: string = "Priyanshu";
+// let globalValue : string = "Priyanshu";
 
 // function greet(){
 //     console.log(UserName);
@@ -9,45 +9,45 @@
 
 //* Function Scope
 // function hello(){
-//     let msg = "Hello World";
-//     console.log(msg);
+//     let blockValue  = "Hello World";
+//     console.log(functionValue );
 // }hello();
-// console.log(msg); error - can't access outside of the function.
+// console.log(functionValue ); error - can't access outside of the function.
 
 //* Blocked Scope
 // if(true){
-//     let x = 10;
-//     console.log(x);
+//     let blockValue = 10;
+//     console.log(blockValue );
 // }
-// console.log(x); error - can only be accessable inside the if-block only.
+// console.log(blockValue ); error - can only be accessable inside the if-block only.
 
 //? Example 1
 
-// var u = 40;
+// var globalValue1 = 40;
 // function access(){
 
-//     const s = 20;
+//     const functionValue1 = 20;
 //     if(true){
-//     let t = 30;
+//     let blockValue1 = 30;
 //     }
 
-    // console.log(s); It is accessable inside the function only.
-    // console.log(t); can't accessible outside the block scope.
+    // console.log(functionValue1); It is accessable inside the function only.
+    // console.log(blockValue1); can't accessible outside the block scope.
     // console.log(u); Accessable everywhere 
 
 
-// console.log(s); can't accessible outside the function
-// console.log(t); can 't accessible outside the block
-// console.log(u); Accessable everywhere
+// console.log(functionValue1); can't accessible outside the function
+// console.log(blockValue1); can 't accessible outside the block
+// console.log(globalValue1); Accessable everywhere
 
 //? Example 2
-// let a = 5;
+// let checkValue = 5;
 
 // if (true) {
-//   let a = 10;
-//   console.log(a); //10
+//   let checkValue = 10;
+//   console.log(checkValue); //10
 // }
-// console.log(a); //5
+// console.log(checkValue); //5
 
 
 

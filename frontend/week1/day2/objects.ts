@@ -1,64 +1,64 @@
 //* An object stores key–value pairs.
-let user = {
+let currentUser  = {
     name: "Vicky",
     age: 25
 };
 
-console.log(user.name);
-console.log(user.age);
+console.log(currentUser .name);
+console.log(currentUser .age);
 
 // Adding types to objects
-let user1: { name: string; age: number } = {
+let employeeDetails: { name: string; age: number } = {
     name: "Ali",
     age: 30
 };
-console.log(user1.name);
-console.log(user1.age);
+console.log(employeeDetails.name);
+console.log(employeeDetails.age);
 
 //modify data
-let user2 = { name: "Sonu", age: 20 };
-user2.age = 21;
+let editableUser  = { name: "Sonu", age: 20 };
+editableUser .age = 21;
 
 
-let user3: { name: string; age?: number } = {
+let optionalAgeUser: { name: string; age?: number } = {
     name: "Rajesh"
 };
-console.log(user3.age); // undefined
+console.log(optionalAgeUser.age); // undefined
 
 //nested object
-let user4 = {
+let userWithAddress  = {
     name: "Kalu",
     address: {
         city: "Bangalore",
         pincode: 560037
     }
 };
-console.log(user4.address.city);
+console.log(userWithAddress .address.city);
 
 //objects inside arrays
-let users = [
+let userList  = [
     { name: "Sakti", age: 25 },
     { name: "Mukti", age: 30 }
 ];
 
-console.log(users[0].name);
+console.log(userList [0].name);
 
 //*object methods
 //keys()
-let user10 = { name: "Rajesh", age: 25 };
-console.log(Object.keys(user10));
+let userRecord  = { name: "Rajesh", age: 25 };
+console.log(Object.keys(userRecord ));
 
 //value()
-console.log(Object.values(user10));
+console.log(Object.values(userRecord ));
 
 //entries()
-console.log(Object.entries(user10));
+console.log(Object.entries(userRecord ));
 
 //* loops in object
-let user11 = { name: "Vicky", age: 23 };
+let loopUser  = { name: "Vicky", age: 23 };
 
-for (let key in user11) {
-    console.log(key, user11[key as keyof typeof user11]);
+for (let key in loopUser ) {
+    console.log(key, loopUser [key as keyof typeof loopUser ]);
 }
 
 
