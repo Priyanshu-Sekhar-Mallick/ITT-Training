@@ -61,3 +61,15 @@ This repository contains my daily learning of JavaScript and TypeScript.
 
 To build strong fundamentals in JavaScript and TypeScript and apply them in real-world projects.
 
+---
+
+### Week 2 Learning
+
+### Day 1 React Basics
+
+* Start with some fundamentals about react, who introduced react and why react came as well why react is very famous in modern world.
+* Explouring some project structure, which is best to follow as my project structure.
+* Understanding the difference between CRA(Create React App) and Vite.
+* Learned JSX/TSX and rendering
+* Understanding the difference between Function component and Class component.
+* 
