@@ -72,4 +72,6 @@ To build strong fundamentals in JavaScript and TypeScript and apply them in real
 * Understanding the difference between CRA(Create React App) and Vite.
 * Learned JSX/TSX and rendering
 * Understanding the difference between Function component and Class component.
-* 
+* Learned about Props, there importance as well as how can reduce the hardcoding by using props and also learned how can pass the data from one component to another.
+* Also i learned about component composition how to combine small components and build a bigger UI.
+* After that understood if i have lots of list of component, instead of writing the component again again i should use ,map() to go through the array list. for the list create a array then use .map() to go through list and return. It will make code clean and faster as well.
