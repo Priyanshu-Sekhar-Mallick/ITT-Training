@@ -1,26 +1,32 @@
 import { useState } from "react";
+import Navbar from "./Components/NavBar";
 import Home from "./Pages/HomePage/Home";
 import Cart from "./Pages/CartPage/Cart";
+import Favorites from "./Pages/Favorite/Favorite";
 
 function App() {
+
   const [cart, setCart] = useState<any[]>([]);
   const [favorites, setFavorites] = useState<any[]>([]);
+  const [page, setPage] = useState("home");
 
   return (
     <div>
-      <h1>Food App</h1>
 
-      {/* Pass props */}
-      <Home
-        cart={cart}
-        setCart={setCart}
-        favorites={favorites}
-        setFavorites={setFavorites}
-      />
+      <Navbar setPage={setPage} />
 
-      <hr />
+      {page === "home" && (
+        <Home cart={cart} setCart={setCart} setFavorites={setFavorites} />
+      )}
 
-      <Cart cart={cart} setCart={setCart} />
+      {page === "cart" && (
+        <Cart cart={cart} setCart={setCart} />
+      )}
+
+      {page === "favorites" && (
+        <Favorites favorites={favorites} />
+      )}
+
     </div>
   );
 }

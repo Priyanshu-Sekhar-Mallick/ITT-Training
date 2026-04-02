@@ -1,6 +1,7 @@
 function Favorites({ favorites }: any) {
   return (
-    <div>
+    <div className="p-4">
+
       <h2>Favorites</h2>
 
       {favorites.map((item: any) => (
@@ -10,5 +11,4 @@ function Favorites({ favorites }: any) {
     </div>
   );
 }
-
 export default Favorites;

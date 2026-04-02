@@ -1,44 +1,55 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { FaCartPlus, FaHeart, FaRupeeSign, FaStar } from "react-icons/fa";
 
-type FoodProps = {
-  food: any;
-  onAddToCart: (item: any) => void;
-  onAddToFavorite: (item: any) => void;
-};
+function FoodCard({ food, onAdd, onFav }: any) {
 
-function FoodCard({ food, onAddToCart, onAddToFavorite }: FoodProps) {
+  const [show, setShow] = useState(false);
 
-  const [showMsg, setShowMsg] = useState(false);
+  const clickRef = useRef(0);
 
   const handleAdd = () => {
-    onAddToCart(food);
-    setShowMsg(true);
-
-    setTimeout(() => setShowMsg(false), 1500);
+    onAdd(food);
+    setShow(true);
+    clickRef.current++;
+    setTimeout(() => setShow(false), 1000);
   };
 
+  const handleFav = () =>{
+    onFav(food);
+    setShow(true);
+    setTimeout(() => setShow(false),1000);
+  };
+
+  useEffect(() => {
+    if (show) {
+      console.log("Item added");
+    }
+  }, [show]);
+
   return (
-    <div style={{ border: "1px solid gray", padding: "10px" }}>
+    <div className="bg-white rounded-xl shadow-md overflow-hidden w-64 hover:shadow-lg transition">
 
-      <img src={food.image} width="100" />
+      <img src={food.image} className="w-full h-40 object-cover" />
 
-      <h3>{food.name}</h3>
-      <p>₹{food.price}</p>
-      <p> {food.rating}</p>
-      <p>{food.ingredients}</p>
+      <h3 className="text-lg font-semibold">{food.name}</h3>
+      <p className="flex items-center gap-1 text-green-600 font-semibold"><FaRupeeSign/>
+      <span>{food.price}</span></p>
+      <p className="flex items-center gap-1 text-yellow-500"><FaStar/> {food.rating}</p>
+      <p className="text-gray-500 text-sm">{food.desc}</p>
 
-    
-      <button onClick={handleAdd}>
-        Add to Cart
-      </button>
+      <div className="flex justify-between mt-3">
 
-      
-      <button onClick={() => onAddToFavorite(food)}>
-         Favorite
-      </button>
+        <button onClick={handleAdd} className="bg-blue-500 text-white px-3 py-1 rounded flex items-center gap-1">
+          <FaCartPlus />
+        </button>
 
-      
-      {showMsg && <p style={{ color: "green" }}>Added to cart</p>}
+        <button onClick={handleFav} className="bg-red-500 text-white px-3 py-1 rounded">
+          <FaHeart />
+        </button>
+
+      </div>
+
+      {show && <p className="text-green-500 text-sm mt-2">Added!</p>}
 
     </div>
   );

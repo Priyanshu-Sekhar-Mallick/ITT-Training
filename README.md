@@ -65,13 +65,104 @@ To build strong fundamentals in JavaScript and TypeScript and apply them in real
 
 ### Week 2 Learning
 
-### Day 1 React Basics
+### I am learning this concepts by building a projects.
 
-* Start with some fundamentals about react, who introduced react and why react came as well why react is very famous in modern world.
-* Explouring some project structure, which is best to follow as my project structure.
-* Understanding the difference between CRA(Create React App) and Vite.
-* Learned JSX/TSX and rendering
-* Understanding the difference between Function component and Class component.
-* Learned about Props, there importance as well as how can reduce the hardcoding by using props and also learned how can pass the data from one component to another.
-* Also i learned about component composition how to combine small components and build a bigger UI.
-* After that understood if i have lots of list of component, instead of writing the component again again i should use ,map() to go through the array list. for the list create a array then use .map() to go through list and return. It will make code clean and faster as well.
+### Week 1 – React Basics (Used in Project)
+
+### 🔹 Vite Setup
+
+Project is created using Vite for fast development and simple setup.
+
+### 🔹 JSX & Rendering
+
+Used JSX to create UI like Navbar, FoodCard, Cart and Favorites pages.
+
+### 🔹 Components
+
+Created reusable components:
+
+* Navbar
+* FoodCard
+* Pages (Home, Cart, Favorites)
+
+### 🔹 Props
+
+Used props to pass data and functions between components
+Example: passing food data and addToCart function to FoodCard
+
+### 🔹 Component Composition
+
+Used components inside other components
+Example: Home → FoodCard
+
+### 🔹 useState
+
+Used useState to manage:
+
+* Cart items
+* Favorite items
+* Popup message
+* Page track
+
+### 🔹 Event Handling
+
+Used events like:
+
+* onClick → Add to cart / Favorite
+
+### 🔹 Rendering List (map)
+
+Used map() to display multiple food items dynamically.
+
+### 🔹 Keys
+
+Used key={food.id} for each item to help React identify elements.
+
+### 🔹 Conditional Rendering
+
+Used:
+
+* && → show “Added to cart” message
+
+---
+
+### Week 2 – Hooks, Context & Performance (Used in Project)
+
+### 🔹 useEffect
+
+Used to perform side effects
+Example: log message when item is added
+
+### 🔹 useRef
+
+Used to store click count without re-render
+
+### 🔹 Prop Drilling
+
+Passed data (cart, favorites) from App → Home → FoodCard using props
+
+### 🔹 Tailwind CSS
+
+Used Tailwind for styling:
+
+* Navbar design
+* Food cards
+* Responsive layout
+
+---
+
+#  Key Features
+
+* Display food items in card layout
+* Add to cart functionality
+* Favorite items feature
+* Popup message on add
+* Popup message on favorite
+* Responsive UI using Tailwind
+* Icons using react-icons
+
+---
+
+# 📌 Conclusion
+
+This project helped in understanding core React concepts like components, props, state management, hooks, and UI design in a simple and practical way.
