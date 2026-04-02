@@ -61,3 +61,108 @@ This repository contains my daily learning of JavaScript and TypeScript.
 
 To build strong fundamentals in JavaScript and TypeScript and apply them in real-world projects.
 
+---
+
+### Week 2 Learning
+
+### I am learning this concepts by building a projects.
+
+### Week 1 – React Basics (Used in Project)
+
+### 🔹 Vite Setup
+
+Project is created using Vite for fast development and simple setup.
+
+### 🔹 JSX & Rendering
+
+Used JSX to create UI like Navbar, FoodCard, Cart and Favorites pages.
+
+### 🔹 Components
+
+Created reusable components:
+
+* Navbar
+* FoodCard
+* Pages (Home, Cart, Favorites)
+
+### 🔹 Props
+
+Used props to pass data and functions between components
+Example: passing food data and addToCart function to FoodCard
+
+### 🔹 Component Composition
+
+Used components inside other components
+Example: Home → FoodCard
+
+### 🔹 useState
+
+Used useState to manage:
+
+* Cart items
+* Favorite items
+* Popup message
+* Page track
+
+### 🔹 Event Handling
+
+Used events like:
+
+* onClick → Add to cart / Favorite
+
+### 🔹 Rendering List (map)
+
+Used map() to display multiple food items dynamically.
+
+### 🔹 Keys
+
+Used key={food.id} for each item to help React identify elements.
+
+### 🔹 Conditional Rendering
+
+Used:
+
+* && → show “Added to cart” message
+
+---
+
+### Week 2 – Hooks, Context & Performance (Used in Project)
+
+### 🔹 useEffect
+
+Used to perform side effects
+Example: log message when item is added
+
+### 🔹 useRef
+
+Used to store click count without re-render
+
+### 🔹 Prop Drilling
+
+Passed data (cart, favorites) from App → Home → FoodCard using props
+
+### 🔹 Tailwind CSS
+
+Used Tailwind for styling:
+
+* Navbar design
+* Food cards
+* Responsive layout
+
+---
+
+#  Key Features
+
+* Display food items in card layout
+* Add to cart functionality
+* Favorite items feature
+* Popup message on add
+* Popup message on favorite
+* Responsive UI using Tailwind
+* Icons using react-icons
+
+---
+
+# 📌 Conclusion
+
+This project helped in understanding core React concepts like components, props, state management, hooks, and UI design in a simple and practical way.
