@@ -11,24 +11,18 @@ function App() {
   const [page, setPage] = useState("home");
 
   return (
-    <div>
-
+    <div className="w-full">
       <Navbar setPage={setPage} />
-
       {page === "home" && (
         <Home cart={cart} setCart={setCart} setFavorites={setFavorites} />
       )}
-
       {page === "cart" && (
         <Cart cart={cart} setCart={setCart} />
       )}
-
       {page === "favorites" && (
-        <Favorites favorites={favorites} />
+        <Favorites favorites={favorites} setFavorites={setFavorites} />
       )}
-
     </div>
   );
 }
-
 export default App;
