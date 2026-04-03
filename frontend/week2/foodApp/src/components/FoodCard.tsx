@@ -1,8 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import { FaCartPlus, FaHeart, FaRupeeSign, FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-
-function FoodCard({ food, onAdd, onFav }: any) {
+import type { Food } from "../types";
+type FoodCardProps = {
+  food: Food;
+  onAdd: (item: Food) => void;
+  onFav: (item: Food) => void;
+};
+function FoodCard({ food, onAdd, onFav }: FoodCardProps) {
 
   const [show, setShow] = useState(false);
   const clickRef = useRef(0);
@@ -22,8 +27,15 @@ function FoodCard({ food, onAdd, onFav }: any) {
     setShow(true);
     setTimeout(() => setShow(false),1000);
   };
-
-  const goToDetails = () =>{
+  const handleAddClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    handleAdd();
+  }
+  const handleFavClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    handleFav();
+  }
+  const handleFoodCardDetails = () =>{
     navigate(`/food/${food.id}`);
   };
 
@@ -34,7 +46,7 @@ function FoodCard({ food, onAdd, onFav }: any) {
   }, [show]);
 
   return (
-    <div onClick={goToDetails} className="bg-white rounded-xl shadow-md overflow-hidden w-full hover:shadow-lg transition flex flex-col">
+    <div onClick={handleFoodCardDetails} className="bg-white rounded-xl shadow-md overflow-hidden w-full hover:shadow-lg transition flex flex-col">
       <img src={food.image} className="w-full h-40 object-cover" />
       <h3 className="text-lg font-semibold text-left">{food.name}</h3>
       <p className="flex items-center gap-1 text-green-600 font-semibold"><FaRupeeSign/>
@@ -43,10 +55,10 @@ function FoodCard({ food, onAdd, onFav }: any) {
       <p className="text-gray-500 text-sm text-left">{food.desc}</p>
 
       <div className="flex justify-between mt-auto">
-        <button onClick={(e) => { e.stopPropagation(); handleAdd();}} className="bg-blue-500 text-white px-3 py-1 rounded flex items-center gap-1">
+        <button onClick={handleAddClick} className="bg-blue-500 text-white px-3 py-1 rounded flex items-center gap-1">
           <FaCartPlus />
         </button>
-        <button onClick={(e) => {e.stopPropagation(); handleFav();}} className="bg-red-500 text-white px-3 py-1 rounded">
+        <button onClick={handleFavClick} className="bg-red-500 text-white px-3 py-1 rounded">
           <FaHeart />
         </button>
       </div>

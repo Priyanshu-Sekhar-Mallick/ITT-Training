@@ -1,7 +1,13 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
 import FoodCard from "../../components/FoodCard";
-
-function Home({ cart, setCart, setFavorites }: any) {
+import type { Food } from "../../types";
+import type React from "react";
+type HomeComponents = {
+  cart: Food[];
+  setCart: React.Dispatch<React.SetStateAction<Food[]>>;
+  setFavorites: React.Dispatch<React.SetStateAction<Food[]>>;
+};
+function Home({ cart, setCart, setFavorites }: HomeComponents) {
 
   const foods = [
     {
@@ -56,8 +62,8 @@ function Home({ cart, setCart, setFavorites }: any) {
           <FoodCard
             key={food.id}
             food={food}
-            onAdd={(item: any) => setCart((prev: any[]) => [...prev, item])}
-            onFav={(item: any) => setFavorites((prev: any[]) => [...prev, item])}
+            onAdd={(item: Food) => setCart((prev: Food[]) => [...prev, item])}
+            onFav={(item: Food) => setFavorites((prev: Food[]) => [...prev, item])}
           />
         ))}
       </div>
