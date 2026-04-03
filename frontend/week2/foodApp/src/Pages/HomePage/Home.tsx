@@ -1,4 +1,5 @@
-import FoodCard from "../../Components/FoodCard";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import FoodCard from "../../components/FoodCard";
 
 function Home({ cart, setCart, setFavorites }: any) {
 
@@ -36,19 +37,30 @@ function Home({ cart, setCart, setFavorites }: any) {
       image: "https://images.unsplash.com/photo-1611270629569-8b357cb88da9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGFzdGF8ZW58MHx8MHx8fDA%3D"
     }
   ];
-
+  const[searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const search = searchParams.get("search") || "";
+  const filterFoods = foods.filter((item)=> item.name.toLowerCase().includes(search.toLowerCase()));
   return (
-    <div className="p-6 grid grid-cols-4 gap-6">
+    <div className="p-6">
+      <input
+        type="text"
+        placeholder="Search for foods"
+        value={search}
+        onChange={(e) => navigate(`/?search=${e.target.value}`)}
+        className="border p-2 mb-4"
+      />
 
-      {foods.map((food) => (
-        <FoodCard
-          key={food.id}
-          food={food}
-          onAdd={(item: any) => setCart((prev: any[]) => [...prev, item])}
-          onFav={(item: any) => setFavorites((prev: any[]) => [...prev, item])}
-        />
-      ))}
-
+      <div className="grid grid-cols-4 gap-6">
+        {filterFoods.map((food) => (
+          <FoodCard
+            key={food.id}
+            food={food}
+            onAdd={(item: any) => setCart((prev: any[]) => [...prev, item])}
+            onFav={(item: any) => setFavorites((prev: any[]) => [...prev, item])}
+          />
+        ))}
+      </div>
     </div>
   );
 }
