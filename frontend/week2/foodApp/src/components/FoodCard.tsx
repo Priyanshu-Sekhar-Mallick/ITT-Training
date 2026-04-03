@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { FaCartPlus, FaHeart, FaRupeeSign, FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import type { Food } from "../types";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/cartSlice";
 type FoodCardProps = {
   food: Food;
   onAdd: (item: Food) => void;
@@ -12,6 +14,7 @@ function FoodCard({ food, onAdd, onFav }: FoodCardProps) {
   const [show, setShow] = useState(false);
   const clickRef = useRef(0);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleAdd = () => {
     onAdd(food);
@@ -30,6 +33,7 @@ function FoodCard({ food, onAdd, onFav }: FoodCardProps) {
   const handleAddClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     handleAdd();
+    dispatch(addToCart(food));
   }
   const handleFavClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
