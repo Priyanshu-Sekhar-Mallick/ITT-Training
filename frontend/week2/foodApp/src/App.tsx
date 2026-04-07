@@ -1,28 +1,35 @@
 import { useState } from "react";
-import Navbar from "./Components/NavBar";
 import Home from "./Pages/HomePage/Home";
 import Cart from "./Pages/CartPage/Cart";
 import Favorites from "./Pages/Favorite/Favorite";
+import { Route, Routes, Navigate } from "react-router-dom";
+import Layout from "./components/Layout";
+import FoodDetails from "./Pages/FoodDetails/FoodDetails";
+import Login from "./Pages/Login/login";
 
 function App() {
 
   const [cart, setCart] = useState<any[]>([]);
   const [favorites, setFavorites] = useState<any[]>([]);
-  const [page, setPage] = useState("home");
+  const user = localStorage.getItem("user");
 
   return (
-    <div className="w-full">
-      <Navbar setPage={setPage} />
-      {page === "home" && (
-        <Home cart={cart} setCart={setCart} setFavorites={setFavorites} />
+    <Routes>
+      {!user && <Route path="*" element={<Navigate to="/login" />} />}
+      <Route path="/login" element={<Login />} />
+      {user && (
+        <>
+          <Route path="/login" element={<Navigate to="/" />} />
+          <Route path="/" element={<Layout />}>
+          <Route index element={<Home cart={cart} setCart={setCart} setFavorites={setFavorites}/>}/>
+          <Route path="cart" element={<Cart cart={cart} setCart={setCart} />}/>
+          <Route path="favorites" element={<Favorites favorites={favorites} setFavorites={setFavorites}/>}/>
+          <Route path="food/:id" element={<FoodDetails />} />
+          </Route>
+        </>
       )}
-      {page === "cart" && (
-        <Cart cart={cart} setCart={setCart} />
-      )}
-      {page === "favorites" && (
-        <Favorites favorites={favorites} setFavorites={setFavorites} />
-      )}
-    </div>
+    </Routes>
   );
 }
+
 export default App;
