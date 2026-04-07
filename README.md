@@ -151,6 +151,101 @@ Used Tailwind for styling:
 
 ---
 
+###  Week 3 – Routing
+
+### 🔹 What I Learned
+
+* Implemented basic routing using BrowserRouter, Routes, Route
+* Used Link for navigation without page reload
+* Used useNavigate for programmatic navigation (e.g., after login)
+
+### 🔹 Nested Routing
+
+* Learned how to create a Layout component with Navbar
+* Used Outlet to render child pages (Home, Cart, Favorites)
+
+### 🔹 Route Params & Query Strings
+
+* Used useParams() to get dynamic values from URL (e.g., food details page)
+* Used useSearchParams() to implement search functionality (`?search=pizza`)
+
+### 🔹 Data Fetching
+
+* Used Fetch API / Axios to get food data from API
+* Handled loading and error states for better user experience
+
+### 🔹 Cleanup
+
+* Learned AbortController to cancel API calls when component unmounts
+
+### 🔹 useEffect Best Practices
+
+* Used dependency array correctly
+* Avoided unnecessary re-renders
+
+---
+
+###  Week 4 – State Management
+
+### 🔹 Redux Toolkit Basics
+
+* Created slice for cart management
+* Used store to manage global state
+* Used dispatch to update state (add/remove items)
+* Used useSelector to access state in components
+
+ Implemented Redux in my project to manage cart and favorites globally (avoiding prop drilling)
+
+---
+
+### 🔹 React Toolkit Query (RTK Query)
+
+* Used RTK Query for API calls instead of useEffect
+* Learned:
+
+  *  Caching (avoids repeated API calls)
+  *  Loading & error handling
+  *  Automatic data fetching
+
+ Replaced manual fetch logic with RTK Query in Home page
+
+---
+
+### 🔹 Context vs Redux
+
+* Context is good for small apps (theme, auth)
+* Redux is better for large apps with complex state
+
+ Used Redux in my project for better scalability
+
+---
+
+### 🔹 Render Props
+
+* Learned pattern to share logic using functions as props
+
+---
+
+### 🔹 Higher-Order Components (HOCs)
+
+* Learned how to wrap components to reuse logic
+
+---
+
+### 🔹 Compound Components
+
+* Learned how multiple components work together (like parent-child UI pattern)
+
+---
+
+### 🔹 Controlled vs Uncontrolled Components
+
+* Controlled → managed by React state (used in login & search input)
+* Uncontrolled → managed by DOM (using refs)
+
+---
+
+
 #  Key Features
 
 * Display food items in card layout
@@ -160,6 +255,10 @@ Used Tailwind for styling:
 * Popup message on favorite
 * Responsive UI using Tailwind
 * Icons using react-icons
+* Built routing system with protected routes (login-based access)
+* Implemented global state using Redux Toolkit
+* Used RTK Query for efficient API handling
+* Improved application performance and structure
 
 ---
 
